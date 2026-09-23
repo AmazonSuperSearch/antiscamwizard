@@ -1,134 +1,3 @@
-good
-i want to add this to index.html. i want it at the top of the page so it is the first thing people will see and can click
-
-Perfect. Since googleplaydownloadicon.png is in the root, alongside index.html, the image path is simply:
-
-src="googleplaydownloadicon.png"
-
-So the clickable badge will be:
-
-<a href="YOUR_GOOGLE_PLAY_STORE_URL"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="google-play-button">
-    <img src="googleplaydownloadicon.png"
-         alt="Get AntiScam Wizard on Google Play">
-</a>
-
-Now send me your current index.html. I'll show you exactly where to put this so the Google Play badge appears right at the top where visitors immediately see it, while keeping the page looking polished.
-
-Pasted text(20260923-031616).txt
-Document
-add it to the top of the page and i will link it to the google play download link when i get it
-
-Yes. I looked at your current index.html. Your hero section starts immediately below the navigation, so that's where I'd put the Google Play badge.
-
-Since you don't have the Google Play URL yet, we can display the badge prominently at the top without making it clickable yet. Then you'll only have to add the URL later.
-
-1. Add this CSS
-
-Put this near the end of your existing <style> section, before </style>:
-
-.play-badge-top {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 28px;
-}
-
-.play-badge-top img {
-    width: 230px;
-    max-width: 80vw;
-    height: auto;
-    display: block;
-}
-2. Add the badge to the top of the hero
-
-You currently have:
-
-<header class="hero" id="top"><div class="wrap heroGrid">
-  <div class="heroCopy"><span class="eyebrow">Think before you click</span>
-
-Change it to:
-
-<header class="hero" id="top"><div class="wrap heroGrid">
-  <div class="heroCopy">
-
-    <div class="play-badge-top">
-      <img src="googleplaydownloadicon.png"
-           alt="Get AntiScam Wizard on Google Play">
-    </div>
-
-    <span class="eyebrow">Think before you click</span>
-
-That puts your actual Google Play graphic above “Think before you click” and the main headline, so it's one of the first things visitors see.
-
-When the app goes live
-
-You only need to wrap the image in a link:
-
-<div class="play-badge-top">
-  <a href="YOUR_GOOGLE_PLAY_URL"
-     target="_blank"
-     rel="noopener noreferrer">
-    <img src="googleplaydownloadicon.png"
-         alt="Get AntiScam Wizard on Google Play">
-  </a>
-</div>
-
-One other thing: your page already has four REPLACE_WITH_GOOGLE_PLAY_URL placeholders—navigation, hero button, download section, and footer.
-
-Once Google Play gives you the real listing URL, we'll replace all five locations at once, including the new badge.
-
-Pasted text(20260923-031813).txt
-Document
-
-do this: Yes. I looked at your current index.html. Your hero section starts immediately below the navigation, so that's where I'd put the Google Play badge.
-
-Since you don't have the Google Play URL yet, we can display the badge prominently at the top without making it clickable yet. Then you'll only have to add the URL later.
-
-1. Add this CSS
-
-Put this near the end of your existing <style> section, before </style>:
-
-.play-badge-top {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 28px;
-}
-
-.play-badge-top img {
-    width: 230px;
-    max-width: 80vw;
-    height: auto;
-    display: block;
-}
-2. Add the badge to the top of the hero
-
-You currently have:
-
-<header class="hero" id="top"><div class="wrap heroGrid">
-  <div class="heroCopy"><span class="eyebrow">Think before you click</span>
-
-Change it to:
-
-<header class="hero" id="top"><div class="wrap heroGrid">
-  <div class="heroCopy">
-
-    <div class="play-badge-top">
-      <img src="googleplaydownloadicon.png"
-           alt="Get AntiScam Wizard on Google Play">
-    </div>
-
-    <span class="eyebrow">Think before you click</span>
-
-That puts your actual Google Play graphic above “Think before you click” and the main headline, so it's one of the first things visitors see.
-
-Done. I updated your actual index.html with the Google Play badge at the top of the hero section, above “Think before you click,” using googleplaydownloadicon.png. Your existing hero begins at that location in the original file.
-
-The badge is not clickable yet, exactly as requested. Once you get the Google Play URL, we can make it clickable and update the other Play Store placeholders at the same time.
-
-Download the updated index.html 
-
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -162,15 +31,20 @@ Download the updated index.html
     @media(max-width:850px){.links>a:not(.navbtn){display:none}.hero{padding-top:58px}.heroGrid,.trustGrid{grid-template-columns:1fr}.heroGrid{gap:55px}.heroCopy{text-align:center}.lead{margin-left:auto;margin-right:auto}.actions{justify-content:center}.grid,.steps{grid-template-columns:1fr}.phone{transform:none}.trustGrid{gap:42px}.foot{flex-direction:column;text-align:center}}@media(max-width:480px){.wrap{width:min(100% - 26px,1140px)}.navin{height:68px}.brand span:last-child{font-size:15px}.navbtn{padding:9px 11px}.hero{padding:46px 0 62px}h1{letter-spacing:-1.7px}.lead{font-size:17px}.actions{display:grid}.button{width:100%}.screen{min-height:570px}section{padding:68px 0}.grid{margin-top:34px}.downloadBox{padding:40px 18px}}
 
     .play-badge-top {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 28px;
+        width: 230px;
+        height: 68px;
+        margin: 0 0 28px 0;
+        overflow: hidden;
+        position: relative;
     }
 
     .play-badge-top img {
+        position: absolute;
         width: 230px;
-        max-width: 80vw;
         height: auto;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
         display: block;
     }
   </style>
@@ -277,5 +151,3 @@ Download the updated index.html
 
 
 </body></html>
-index.html
-HTML
