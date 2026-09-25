@@ -365,5 +365,5 @@ async function readImage(file){if(!file.type.startsWith('image/'))throw Error('P
   }catch(e){throw Error('Could not read this image. Check your connection and try again, or paste the text.')}}
   return parts.join('\n')}finally{bitmap.close()}}
 $('check').onclick=async()=>{const btn=$('check');$('error').hidden=true;btn.disabled=true;btn.textContent='CHECKING…';try{let chunks=[message.value.trim()];if(selected.length&&!imageSupported)throw Error('Image reading is unavailable in this browser. Remove the images and paste their text instead.');for(const file of selected){let extracted=await readImage(file);if(!extracted)throw Error(`Could not read text or a QR code from ${file.name}. Remove it and paste its text instead.`);chunks.push(extracted)}const input=chunks.filter(Boolean).join('\n');if(!input){throw Error(selected.length?'This browser could not read text or QR codes from the selected images. Paste the text instead, or try a browser with image text recognition.':'Paste a message or link, or select an image to check.')}render(analyze(input),input)}catch(e){$('error').textContent=e.message;$('error').hidden=false}finally{btn.disabled=false;btn.textContent='✦   CHECK FOR SCAM'}};
-</script><script src="https://pl31512034.profitableratecpmnetwork.com/48/f6/b4/48f6b4d44bd7b38b3131f4da4e5b1641.js"></script>
+</script>
 </body></html>
